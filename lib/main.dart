@@ -24,6 +24,21 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Text('Hello world', textAlign: TextAlign.center);
+    return const Column(
+      children: <Widget>[
+        Text('Hello world'),
+        Text('texto 2'),
+        Row(
+          children: [
+            Icon(
+              Icons.person,
+              color: Colors.white,
+              size: 40,
+            ),
+            Text('texto 2'),
+          ],
+        )
+      ],
+    );
   }
 }
