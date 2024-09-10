@@ -28,10 +28,10 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Barra'),
       ),
-      body: const Column(
+      body: Column(
         children: <Widget>[
-          Text('Hello world'),
-          Row(
+          const Text('Hello world'),
+          const Row(
             children: [
               Icon(
                 Icons.person,
@@ -40,15 +40,24 @@ class MyHomePage extends StatelessWidget {
               Text('texto 2'),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             width: 300,
             height: 80,
             child: Icon(Icons.local_pizza),
           ),
-          Padding(
+          const Padding(
             padding: EdgeInsets.all(30),
             child: Text('mais  um texto'),
-          )
+          ),
+          Container(
+            alignment: Alignment.topRight,
+            padding: const EdgeInsets.all(20),
+            decoration: const BoxDecoration(
+                color: Colors.red,
+                borderRadius: BorderRadius.all(Radius.circular(20))),
+            width: 300,
+            child: const Text('container'),
+          ),
         ],
       ),
     );
