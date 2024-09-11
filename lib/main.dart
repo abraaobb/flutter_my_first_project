@@ -1,3 +1,5 @@
+import 'dart:developer' as dev;
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -58,6 +60,11 @@ class MyHomePage extends StatelessWidget {
             width: 300,
             child: const Text('container'),
           ),
+          ElevatedButton(
+              onPressed: () {
+                dev.log('fui clicado');
+              },
+              child: const Text('Eu sou um botão')),
         ],
       ),
     );
