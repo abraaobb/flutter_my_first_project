@@ -30,67 +30,83 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Barra'),
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: <Widget>[
-            const Text('Hello world'),
-            const Row(
+      body: ListView(
+        children: <Widget>[
+          const Text('Hello world'),
+          const Row(
+            children: [
+              Icon(
+                Icons.person,
+                size: 30,
+              ),
+              Text('texto 2'),
+            ],
+          ),
+          const SizedBox(
+            width: 300,
+            height: 80,
+            child: Icon(Icons.local_pizza),
+          ),
+          const Padding(
+            padding: EdgeInsets.all(30),
+            child: Text('mais  um texto'),
+          ),
+          Container(
+            alignment: Alignment.topRight,
+            padding: const EdgeInsets.all(20),
+            decoration: const BoxDecoration(
+                color: Colors.red,
+                borderRadius: BorderRadius.all(Radius.circular(20))),
+            width: 300,
+            child: const Text('container'),
+          ),
+          ElevatedButton(
+              onPressed: () {
+                dev.log('fui clicado');
+              },
+              child: const Text('Eu sou um botão')),
+          Row(
+            children: [
+              Expanded(
+                  flex: 1,
+                  child: Container(
+                    color: Colors.green,
+                    height: 50,
+                  )),
+              Expanded(
+                  flex: 3,
+                  child: Container(
+                    color: Colors.grey,
+                    height: 50,
+                  )),
+              Expanded(
+                  flex: 1,
+                  child: Container(
+                    color: Colors.yellow,
+                    height: 50,
+                  )),
+            ],
+          ),
+          Image.network('https://picsum.photos/700/900'),
+          const SizedBox(height: 20, child: Text('')),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
               children: [
-                Icon(
-                  Icons.person,
-                  size: 30,
-                ),
-                Text('texto 2'),
-              ],
-            ),
-            const SizedBox(
-              width: 300,
-              height: 80,
-              child: Icon(Icons.local_pizza),
-            ),
-            const Padding(
-              padding: EdgeInsets.all(30),
-              child: Text('mais  um texto'),
-            ),
-            Container(
-              alignment: Alignment.topRight,
-              padding: const EdgeInsets.all(20),
-              decoration: const BoxDecoration(
+                Container(
+                  width: 220,
+                  height: 50,
                   color: Colors.red,
-                  borderRadius: BorderRadius.all(Radius.circular(20))),
-              width: 300,
-              child: const Text('container'),
-            ),
-            ElevatedButton(
-                onPressed: () {
-                  dev.log('fui clicado');
-                },
-                child: const Text('Eu sou um botão')),
-            Row(
-              children: [
-                Expanded(
-                    flex: 1,
-                    child: Container(
-                      color: Colors.green,
-                      height: 50,
-                    )),
-                Expanded(
-                    flex: 3,
-                    child: Container(
-                      color: Colors.grey,
-                      height: 50,
-                    )),
-                Expanded(
-                    flex: 1,
-                    child: Container(
-                      color: Colors.yellow,
-                      height: 50,
-                    )),
+                ),
+                Container(
+                  width: 220,
+                  height: 50,
+                  color: Colors.blue,
+                ),
               ],
             ),
-            Image.network('https://picsum.photos/300/900')
-          ],
-        ),
+          )
+        ],
       ),
     );
   }
